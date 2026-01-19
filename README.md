@@ -184,7 +184,7 @@ moesi-4core-cache-coherence/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/moesi-4core-cache-coherence.git
+git clone https://github.com/TejaRaghuveer/MOESI-4core-Cache-coherency.git
 cd moesi-4core-cache-coherence
 
 # Verify installation
@@ -569,7 +569,7 @@ Please submit pull requests with clear descriptions of changes. Ensure all tests
 
 MIT License
 
-Copyright (c) 2026 [Your Name]
+Copyright (c) 2026 Raghuveer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -593,9 +593,9 @@ SOFTWARE.
 
 ## Contact / Author
 
-**GitHub**: [@yourusername](https://github.com/yourusername)  
-**Portfolio**: [yourwebsite.com](https://yourwebsite.com)  
-**Email**: your.email@example.com
+**GitHub**: [https://github.com/TejaRaghuveer](https://github.com/TejaRaghuveer)  
+**Portfolio**: [https://www.linkedin.com/in/raghu-veer-856746289/](https://www.linkedin.com/in/raghu-veer-856746289/)  
+**Email**: tejaraghuvee@gmail.com
 
 For questions, suggestions, or collaboration opportunities, please open an issue or reach out via email.
 
