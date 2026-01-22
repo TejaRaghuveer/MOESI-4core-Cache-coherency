@@ -162,6 +162,16 @@ module cache_controller #(
     logic [2:0]            snoop_hit_state;
     integer                w;
 
+    // Compute write target state without relying on moesi_fsm timing
+    function automatic logic [2:0] write_target_state(input logic [2:0] state_in);
+        begin
+            case (state_in)
+                MOESI_M, MOESI_O, MOESI_E, MOESI_S: write_target_state = MOESI_M;
+                default: write_target_state = MOESI_M; // write miss from I -> M
+            endcase
+        end
+    endfunction
+
     // -------------------------------------------------------------------------
     // Instantiate tag array
     // -------------------------------------------------------------------------
@@ -357,8 +367,8 @@ module cache_controller #(
                 pending_wway  <= rd_hit ? rd_hit_way : lru_victim_way;
                 // Latch whether this write needs an upgrade (hit in S/O).
                 pending_wupgr <= rd_hit && (rd_hit_state == MOESI_S || rd_hit_state == MOESI_O);
-                // Latch desired write state from MOESI FSM (e.g., E->M)
-                pending_wstate <= next_state;
+                // Latch desired write state directly from current line state
+                pending_wstate <= write_target_state(rd_hit ? rd_hit_state : MOESI_I);
             end
         end
     end
