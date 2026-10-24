@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-TOP          := moesi_tb_top
+TOP          := tb_moesi_top
 BUILD_DIR    := build
 RTL_DIR      := rtl
 VERIF_DIR    := verification
